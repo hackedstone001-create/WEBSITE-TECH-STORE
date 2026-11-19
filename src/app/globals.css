@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Official Tech Store Brand Tokens */
+  --brand-black: #08080B;
+  --brand-dark-surface: #111116;
+  --brand-secondary-dark: #19151F;
+  --brand-purple: #8138F5;
+  --brand-bright-purple: #A855F7;
+  --brand-light-purple: #C4A2FF;
+  --brand-white: #FFFFFF;
+  --brand-light-bg: #F5F5F7;
+  --brand-light-card: #FFFFFF;
+  --brand-primary-text: #17151D;
+  --brand-secondary-text: #77717E;
+  --brand-border: #E8E5ED;
+  --brand-success: #16A36A;
+  --brand-error: #DC4545;
+  --brand-purple-glow: rgba(129, 56, 245, 0.38);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--brand-light-bg);
+  color: var(--brand-primary-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Luxury Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #231E2C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8138F5;
+}
+
+/* Glassmorphism for Dark Stage */
+.hero-glass {
+  background: rgba(17, 17, 22, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(196, 162, 255, 0.12);
+}
+
+.hero-glass-subtle {
+  background: rgba(25, 21, 31, 0.60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(196, 162, 255, 0.08);
+}
+
+.hero-glow-border {
+  border: 1px solid rgba(129, 56, 245, 0.35);
+  box-shadow: 0 0 25px -5px rgba(129, 56, 245, 0.35);
+}
+
+/* Micro-Grid Lines for Dark Hero */
+.hero-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 85, 247, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Light Retail Interface Utilities */
+.retail-card {
+  background: #FFFFFF;
+  border: 1px solid #E8E5ED;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.retail-card:hover {
+  border-color: #C4A2FF;
+  box-shadow: 0 16px 32px -8px rgba(129, 56, 245, 0.10), 0 4px 10px -2px rgba(23, 21, 29, 0.04);
+  transform: translateY(-2px);
+}
+
+.retail-pill {
+  border: 1px solid #E8E5ED;
+  background: #FFFFFF;
+  color: #77717E;
+  transition: all 0.2s ease;
+}
+
+.retail-pill:hover {
+  border-color: #8138F5;
+  color: #8138F5;
+  background: #FAF5FF;
+}
+
+.retail-pill-active {
+  border-color: #8138F5;
+  background: #8138F5;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px -2px rgba(129, 56, 245, 0.35);
+}
+
+/* Accessibility Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
